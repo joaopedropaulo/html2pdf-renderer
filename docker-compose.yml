@@ -8,5 +8,5 @@ services:
     ports:
       - "5000:5000"
     volumes:
-      - ./src:/usr/server/src
+      - ./src:/home/node/src
     command: npm run server

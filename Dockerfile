@@ -1,7 +1,7 @@
-FROM node:14.8.0-alpine3.11
+FROM node:14.8.0
 
 # Create app directory
-WORKDIR /usr/server
+WORKDIR /home/node
 
 # Copy 
 COPY package*.json ./
