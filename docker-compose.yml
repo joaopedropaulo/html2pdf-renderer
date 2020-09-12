@@ -9,4 +9,5 @@ services:
       - "5000:5000"
     volumes:
       - ./src:/home/node/src
+      - ./file.pdf:/home/node/file.pdf
     command: npm run server
