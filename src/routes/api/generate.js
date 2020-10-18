@@ -3,8 +3,6 @@ const router = express.Router();
 const isEmptyObject = require("../../utils/isEmptyObject");
 const Mustache = require("mustache");
 const multer = require("multer");
-const pdf = require("html-pdf");
-var wkhtmltopdf = require("wkhtmltopdf");
 const puppeteer = require("puppeteer");
 var upload = multer();
 
@@ -69,6 +67,8 @@ router.post("/pdf", upload.none(), async (req, res, next) => {
     var pdf = await page.pdf({ format: "A4" });
 
     res.setHeader("Content-type", "application/pdf");
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "X-Requested-With");
     return res.status(200).send(pdf);
   } catch (err) {
     console.error(err.message);
