@@ -1,0 +1,26 @@
+version: 2.1
+orbs:
+  node: circleci/node@3.0.1
+jobs:
+  deploy-to-heroku:
+    machine:
+      image: ubuntu-1604:201903-01
+    steps:
+      - checkout
+      - run:
+          name: Push to Heroku
+          command: |
+              sudo curl https://cli-assets.heroku.com/install.sh | sh
+              cd server
+              HEROKU_API_KEY=${HEROKU_API_KEY} heroku container:login
+              HEROKU_API_KEY=${HEROKU_API_KEY} heroku container:push -a ${HEROKU_APP_NAME} web
+              HEROKU_API_KEY=${HEROKU_API_KEY} heroku container:release -a ${HEROKU_APP_NAME} web
+              
+workflows:
+    deploy-to-heroku:
+      jobs:
+        - deploy-to-heroku:
+            filters:
+              branches:
+                only:
+                  - master
