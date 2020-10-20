@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      html {
+        -webkit-print-color-adjust: exact;
+      }
+
+      body {
+        margin: 0;
+      }
+      .base {
+        margin: 0;
+        width: 100%;
+        height: 100%;
+        background-color: yellow;
+      }
+      .inner-content {
+        margin: 0 0 0 15%;
+        padding: 5% 15%;
+        background-color: rgb(223, 134, 0);
+        width: fit-content;
+        height: fit-content;
+      }
+      .list-item {
+        margin: 0;
+        color: rgb(51, 255, 0);
+      }
+      #title {
+        margin: 0;
+        padding: 5% 15%;
+        color: pink;
+      }
+      #subtitle {
+        margin: 0;
+        padding: 5% 15%;
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="base">
+      <h2 id="title">{{ title}}</h2>
+      <h4 id="subtitle">{{ subtitle }}</h4>
+      <div class="inner-content">
+        {{#list}}
+        <p class="list-item">{{name}}</p>
+        {{/list}}
+      </div>
+    </div>
+  </body>
+</html>

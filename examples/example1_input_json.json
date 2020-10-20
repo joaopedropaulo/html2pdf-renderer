@@ -1,0 +1,18 @@
+{
+  "title": "This is not a drill",
+  "subtitle": "This is a subtitle",
+  "list": [
+    {
+      "name": "A",
+      "type": "yes"
+    },
+    {
+      "name": "B",
+      "type": "no"
+    },
+    {
+      "name": "C",
+      "type": "yes"
+    }
+  ]
+}
