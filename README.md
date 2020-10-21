@@ -84,4 +84,4 @@ The generated output HTML file would be:
 
 Considering the previously given inputs for the HTML Mustache template and JSON payload, a request sent to this endpoint would generate a PDF version of the output HTML above.
 
-For additional examples, please check the `examples` folder in this repository.
+For additional examples, please check the [examples](https://github.com/joaopedropaulo/html2pdf-renderer/tree/master/examples) folder.
