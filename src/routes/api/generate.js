@@ -64,7 +64,10 @@ router.post("/pdf", upload.none(), async (req, res, next) => {
 
     const page = await browser.newPage();
     await page.setContent(renderedHtml);
-    var pdf = await page.pdf({ format: "A4" });
+    var pdf = await page.pdf({
+      format: "A4",
+      margin: { top: "1cm", bottom: "1cm" },
+    });
 
     res.setHeader("Content-type", "application/pdf");
     res.header("Access-Control-Allow-Origin", "*");
