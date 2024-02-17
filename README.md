@@ -4,8 +4,8 @@ Simple Node.js application that, given an HTML [mustache.js](https://github.com/
 
 It exposes 2 endpoints:
 
-- `/api/generate/pdf` - renders an HTML page based on a JSON input payload and an HTML template
-- `/api/generate/html` - renders a PDF based on a JSON input payload and an HTML template
+- `/api/generate/pdf` - renders a PDF based on a JSON input payload and an HTML template
+- `/api/generate/html` - renders an HTML page based on a JSON input payload and an HTML template
 
 # Requirements
 
