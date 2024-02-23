@@ -58,7 +58,7 @@ router.post("/pdf", upload.none(), async (req, res, next) => {
   var template = req.body.template;
   var input = JSON.parse(req.body.input);
 
-  const browser = await puppeteer.launch({ args: ["--no-sandbox"] });
+  const browser = await puppeteer.launch({ executablePath: 'google-chrome-stable', args: ["--no-sandbox"] });
   try {
     var renderedHtml = Mustache.render(template, input);
 
